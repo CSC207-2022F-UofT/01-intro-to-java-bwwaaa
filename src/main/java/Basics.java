@@ -43,8 +43,8 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
-
-
+        System.out.println("Hello World!");
+        System.out.println(oddSum(new int[]{4, 9, 10, 45, 22, 11, 34, 9, 23}));
 
         /* 4. In Python, we could declare variables using a simple assignment
          *    statement. For example:
@@ -62,7 +62,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
+        int my_variable = 100;
 
 
         /* Do not remove the line below: if you did task 2 correctly, then
@@ -99,7 +99,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int i = 10; i >= 0; i--){
+            System.out.println("Current count: "+ i);
+        }
 
     }
 
@@ -140,10 +142,18 @@ public class Basics {
          *                separated by spaces, so no loops are required, though
          *                you may use them if you wish.
          */
+
+
         StringBuilder ret = new StringBuilder();
-
         // Fill in the rest of the body here
-
+        String[] array = to_split.split(" ", -1);
+        ret.append(array[0].charAt(0));
+        ret.append(array[1].charAt(0));
+        ret.append(array[2].charAt(0));
+        ret.append(array[3].charAt(0));
+        ret.append(array[4].charAt(0));
+        ret.append(array[5].charAt(0));
+        ret.append(array[6].charAt(0));
         return ret.toString();
     }
 
@@ -163,14 +173,19 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
+        int current_ind = 0;
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
          *                .length attribute (e.g. arr.length)
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-
+        for (int i : arr){
+            if (current_ind % 2 != 0) {
+                current_sum += i;
+            }
+            current_ind += 1;
+        }
         return current_sum;
     }
 
